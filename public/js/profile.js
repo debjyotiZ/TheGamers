@@ -1,9 +1,4 @@
-var xmlhttprequest = new XMLHttpRequest();
-xmlhttprequest.open('GET','http://localhost:3000/showStatus?username=deysub',true);
-xmlhttprequest.send();
-xmlhttprequest.onreadystatechange = function(){
-	if(xmlhttprequest.readystate==4){
-var responseJSON = JSON.parse(xmlhttprequest.responseText);
+
 var json = {
   "data": [
     {
@@ -39,24 +34,20 @@ var json = {
       "id": "784004758307795"
     }, 
     ]};
-for(var i=0; i < json.data.length; i++)
-{
+
 document.write('<div class="wrap">');
 document.write('<div class="column_right">');
 document.write('  <div class="menu_box_feed">');
-document.write('    <h3>'+json.data[i].name+'</h3>');
-document.write('    <h3>'+json.data[i].name+'</h3>');
-document.write('    <h3>'+json.data[i].name+'</h3>');
-document.write('    <h3>'+json.data[i].name+'</h3>');
+document.write('    <h3>'+json.data[0].name+'</h3>');
+document.write('    <h3>'+json.data[0].name+'</h3>');
+document.write('    <h3>'+json.data[1].name+'</h3>');
+document.write('    <h3>'+json.data[2].name+'</h3>');
 document.write('     <div class="menu_box_lists">');
 document.write('   </div>');
 document.write('   </div>');
 document.write(' </div>');
 document.write('</div>');
 
-}
-}
-};
 
 
 

@@ -32,6 +32,7 @@ body{
 	background:#1f253d;
 	padding:100px 0;
 	position:relative;
+	height:100%;
 }
 .wrap{
 	width:80%;
@@ -162,6 +163,7 @@ fieldset#body {
 /********* Main ************/
 .main{
 	padding:30px 0;
+	padding-bottom:80px;
 }
 .column_left,.column_middle{
 	float:left;
@@ -170,6 +172,27 @@ fieldset#body {
 
 .column_middle{
 	margin:0 3%;
+}
+/*footer*/
+.wrapper {
+	min-height:100%;
+	position:relative;
+}
+.content_footer {
+	width: 68%;
+margin: 0 10em; /* Height of the footer element */
+}
+.menu_box_footer{
+width: 100%;
+background: #336699;
+float: left;
+margin: 0 0 .5% 0;
+border-radius: 10px;
+box-shadow: 5px 5px 10px #202020
+}
+#footer { height: 40px;
+background-color: black;
+width: 80%;
 }
 
 /******** Colunm Right *************/

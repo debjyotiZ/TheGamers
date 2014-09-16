@@ -53,9 +53,18 @@ app.get('/getReco', function(req,res){
     require('./controllers/getReco').getRecommendations(req,res);
 });
 
-
 app.get('/', function(req,res){
     res.render('index.html');
+});
+
+app.get('/messages', function(req,res){
+    res.render('messages.html');
+});
+app.get('/profiles', function(req,res){
+    res.render('profiles.html');
+});
+app.get('/follow', function(req,res){
+    res.render('follow.html');
 });
 
 app.listen(3000,function(){
