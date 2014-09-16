@@ -1,4 +1,4 @@
 TheGamers
 =========
 
-Hackathon
+An application for Sequoia Capital Hackathon
