@@ -1,62 +1,37 @@
-var xmlhttprequest = new XMLHttpRequest();
-xmlhttprequest.open('GET','http://localhost:3000/showStatus?username=deysub',true);
-xmlhttprequest.send();
-xmlhttprequest.onreadystatechange = function(){
-	if(xmlhttprequest.readystate==4){
-var responseJSON = JSON.parse(xmlhttprequest.responseText);
-var json = {
-  "data": [
-    {
-      "name": "Arghya Chowdhury", 
-      "id": "713813173"
-    }, 
-    {
-      "name": "Veeranjaneyulu Kacherla", 
-      "id": "1187040703"
-    }, 
-    {
-      "name": "Subhobrata Dey", 
-      "id": "10204822643314742"
-    }, 
-    {
-      "name": "Ravi Ranjan", 
-      "id": "100000069393711"
-    }, 
-    {
-      "name": "Annesha Paul", 
-      "id": "100000423766025"
-    }, 
-    {
-      "name": "Kalyan Bhunia", 
-      "id": "100000592945092"
-    }, 
-    {
-      "name": "Ratna Saha", 
-      "id": "100000745437682"
-    }, 
-    {
-      "name": "DK Pathak", 
-      "id": "784004758307795"
-    }, 
-    ]};
-for(var i=0; i < json.data.length; i++)
-{
-document.write('<div class="wrap">');
-document.write('<div class="column_right">');
-document.write('  <div class="menu_box_feed">');
-document.write('    <h3>'+json.data[i].name+'</h3>');
-document.write('    <h3>'+json.data[i].name+'</h3>');
-document.write('    <h3>'+json.data[i].name+'</h3>');
-document.write('    <h3>'+json.data[i].name+'</h3>');
-document.write('     <div class="menu_box_lists">');
-document.write('   </div>');
-document.write('   </div>');
-document.write(' </div>');
-document.write('</div>');
-
-}
-}
+var feeding = function(username,userid){
+    var xmlhttprequest = new XMLHttpRequest();
+    xmlhttprequest.open('GET','http://localhost:3000/showStatus?username=' + userid,false);
+    xmlhttprequest.onreadystatechange = function(){
+	   if(xmlhttprequest.readyState==4 && xmlhttprequest.status==200){
+           var responseJSON = JSON.parse(xmlhttprequest.responseText);
+            var json = responseJSON.success;  
+            var renderHTML = "";
+            for(var count=0; count < json.length; count++)
+            {
+                if(json[count].username!=userid){
+                    var xmlhttprequest4 = new XMLHttpRequest();
+                    xmlhttprequest4.open('GET','http://localhost:3000/getUser?name=' + json[count].username,false);
+                    xmlhttprequest4.onreadystatechange = function(){
+                        if(xmlhttprequest4.readyState==4 && xmlhttprequest4.status==200){
+                            var responseJSON2 = JSON.parse(xmlhttprequest4.responseText);
+                            var name = responseJSON2.success[0].name;
+                            var xmlhttprequest5 = new XMLHttpRequest();
+                            xmlhttprequest5.open('GET','http://localhost:3000/getUser?name=' + json[count].for,false);
+                            xmlhttprequest5.send();
+                            var responseJSON3 = JSON.parse(xmlhttprequest5.responseText);
+                            var name1 = responseJSON3.success[0].name;
+                            renderHTML = renderHTML + '    <h3>'+name+'</h3>';
+                            renderHTML = renderHTML + '    <h3>'+name1+'</h3>';
+                            renderHTML = renderHTML + '    <h3>'+json[count].status+'</h3>';
+                            renderHTML = renderHTML + '     <div class="menu_box_lists">';
+                            renderHTML = renderHTML + '   </div>';
+                        }
+                    };
+                    xmlhttprequest4.send();
+                }
+            }
+            document.getElementById('feeder').innerHTML = renderHTML;
+        }
+    };
+    xmlhttprequest.send();
 };
-
-
-

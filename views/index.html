@@ -12,6 +12,7 @@
 <script type="text/javascript" src="js/Chart.js"></script>
  <script type="text/javascript" src="js/jquery.easing.js"></script>
  <script type="text/javascript" src="js/jquery.ulslide.js"></script>
+    <script type="text/javascript" src="js/feed.js"></script>
  	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" media="screen" />
 	<!--jQuery and jQuery UI with jQuery Chat-->
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
@@ -82,23 +83,29 @@
 				      </div>
 	    		 </div>
 	    		 <div class="chart">
-	    		 	 <h3>Online Friends</h3>
-	    		 	   <div class="menu_box_list">
-				      		<ul>
+	    		 	 <h3>Online Following & Favorites</h3>
+	    		 	   <div id="menu1" class="menu_box_list">
+				      		<!--ul>
 						  		<li><a href="" ><span>Subho</span><label class="digits">1</label><div class="clear"></div></a></li>
 						  		<li id="button" name="toggle" value="toggle"><a href="#" ><span>Debjyoti</span><label class="digits active">3</label><div class="clear"></div></a></li>
 						  		<li id="button" name="toggle" value="toggle"><a href="#" ><span>Ram</span><label class="digits active">3</label><div class="clear"></div></a></li>
 						  		<li id="button" name="toggle" value="toggle"><a href="#" ><span>Rohit</span><label class="digits active">3</label><div class="clear"></div></a></li>
 						  								  	
-				    		</ul>
+				    		</ul-->
 				      </div>
+                     <script type="text/javascript" src="js/showonlinefriends.js"></script>
 	    		 </div>
 	    	  </div> 
 	    	</div>
 
+            <div class="wrap">
+                <div class="column_right">
+                    <div id="feeder" class="menu_box_feed">
+                    </div>
+                </div> 
+            </div>
 
-
-	       <script type="text/javascript" src="js/feed.js"></script>
+	       
  <!--  <div class="wrap"> 
 <div class="column_rightend">	          
 	    		 <div class="menu_box">

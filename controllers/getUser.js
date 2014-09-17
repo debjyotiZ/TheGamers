@@ -11,7 +11,7 @@ exports.getUser = function(req,res){
         }
         
         var collection = db.collection('Users');
-        collection.find({"name": query.name}).toArray(function(err,results){
+        collection.find({"username": query.name}).toArray(function(err,results){
             if(err){
                 console.log(err);
                 res.end('{"error": "Data not returned"}');
