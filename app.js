@@ -64,7 +64,7 @@ app.get('/profiles', function(req,res){
     res.render('profiles.html');
 });
 app.get('/follow', function(req,res){
-    res.render('follow.html');
+    res.render('follow.html'); 
 });
 
 app.listen(3000,function(){
