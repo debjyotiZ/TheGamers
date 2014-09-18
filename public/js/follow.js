@@ -1,48 +1,24 @@
 var table = new sap.m.Table()
+var urlparams = window.location.href.split('?')[1];
+var userId = urlparams.split('=')[1];
+var xmlhttprequest = new XMLHttpRequest();
+xmlhttprequest.open('GET','http://localhost:3000/getFollow?from=true&user=' + userId,false);
+xmlhttprequest.send();
+var responseJson1 = JSON.parse(xmlhttprequest.responseText);
+var xmlhttprequest1 = new XMLHttpRequest();
+xmlhttprequest1.open('GET','http://localhost:3000/getFavorite?from=true&user=' + userId,false);
+xmlhttprequest1.send();
+var responseJson2 = JSON.parse(xmlhttprequest.responseText);
+var data = [];
+for(var count=0;count<responseJson1.success.length;count++){
+    data.push(responseJson1.success[count]);
+}
+for(var count=0;count<responseJson2.success.length;count++){
+    data.push(responseJson2.success[count]);
+}
 var json = {
-  "data": [
-    {
-      "name": "Arghya Chowdhury", 
-      "id": "713813173",
-      "message": "NEW DELHI, Tuesday's bypoll results will come as a shock to the BJP not just be cause it lost several sitting seats in crucial states like Uttar Pradesh, Rajasthan and Gujarat, but also because the party has lost vote share in most states, not just in comparison to the Lok Sabha elections of April-May but even in relation to the performance in the last assembly polls in these states. "
-
-    }, 
-    {
-      "name": "Veeranjaneyulu Kacherla", 
-      "id": "1187040703",
-       "message": "NEW DELHI: Tuesday's bypoll results will come as a shock to the BJP not just be cause it lost several sitting seats in crucial states like Uttar Pradesh, Rajasthan and Gujarat, but also because the party has lost vote share in most states, not just in comparison to the Lok Sabha elections of April-May but even in relation to the performance in the last assembly polls in these states." 
-    }, 
-    {
-      "name": "Subhobrata Dey", 
-      "id": "10204822643314742",
-       "message": "NEW DELHI: Tuesday's bypoll results will come as a shock to the BJP not just be cause it lost several sitting seats in crucial states like Uttar Pradesh, Rajasthan and Gujarat, but also because the party has lost vote share in most states, not just in comparison to the Lok Sabha elections of April-May but even in relation to the performance in the last assembly polls in these states. "
-    }, 
-    {
-      "name": "Ravi Ranjan", 
-      "id": "100000069393711",
-       "message": "NEW DELHI: Tuesday's bypoll results will come as a shock to the BJP not just be cause it lost several sitting seats in crucial states like Uttar Pradesh, Rajasthan and Gujarat, but also because the party has lost vote share in most states, not just in comparison to the Lok Sabha elections of April-May but even in relation to the performance in the last assembly polls in these states. "
-    }, 
-    {
-      "name": "Annesha Paul", 
-      "id": "100000423766025",
-       "message": "NEW DELHI: Tuesday's bypoll results will come as a shock to the BJP not just be cause it lost several sitting seats in crucial states like Uttar Pradesh, Rajasthan and Gujarat, but also because the party has lost vote share in most states, not just in comparison to the Lok Sabha elections of April-May but even in relation to the performance in the last assembly polls in these states. "
-    }, 
-    {
-      "name": "Kalyan Bhunia", 
-      "id": "100000592945092",
-       "message": "NEW DELHI: Tuesday's bypoll results will come as a shock to the BJP not just be cause it lost several sitting seats in crucial states like Uttar Pradesh, Rajasthan and Gujarat, but also because the party has lost vote share in most states, not just in comparison to the Lok Sabha elections of April-May but even in relation to the performance in the last assembly polls in these states. "
-    }, 
-    {
-      "name": "Ratna Saha", 
-      "id": "100000745437682",
-       "message": "NEW DELHI: Tuesday's bypoll results will come as a shock to the BJP not just be cause it lost several sitting seats in crucial states like Uttar Pradesh, Rajasthan and Gujarat, but also because the party has lost vote share in most states, not just in comparison to the Lok Sabha elections of April-May but even in relation to the performance in the last assembly polls in these states. "
-    }, 
-    {
-      "name": "DK Pathak", 
-      "id": "784004758307795",
-       "message": "NEW DELHI: Tuesday's bypoll results will come as a shock to the BJP not just be cause it lost several sitting seats in crucial states like Uttar Pradesh, Rajasthan and Gujarat, but also because the party has lost vote share in most states, not just in comparison to the Lok Sabha elections of April-May but even in relation to the performance in the last assembly polls in these states. "
-    }, 
-    ]};
+  "data": data 
+};
 var oJsonModel = new sap.ui.model.json.JSONModel();
 oJsonModel.setData(json);
     
@@ -56,10 +32,10 @@ var oTemp=new sap.m.ColumnListItem({
 										cells: [
 
 										        new sap.m.VBox({
-										        	items:[new sap.m.Image({src:"img/logo.png"}),  new  sap.m.Text({text:"{name}"})]
+										        	items:[new sap.m.Image({src:"img/logo.png"}),  new  sap.m.Text({text:"{from}"})]
 										        }).addStyleClass("box"),
 										        new sap.m.VBox({
-										        	items:[new  sap.m.Text({text:"{id}"})]
+										        	items:[new  sap.m.Text({text:"{to}"})]
 										        }).addStyleClass("box"),
                             new sap.m.VBox({
                               items:[new  sap.m.Image({src:"images/favourite.png"})]

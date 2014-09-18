@@ -18,7 +18,7 @@
     <script type="text/javascript" src="js/jquery.ui.chatbox.js"></script>
  <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
 
-   <script type="text/javascript" src="resources/sap-ui-core.js"
+   <script type="text/javascript" src="https://sapui5.netweaver.ondemand.com/resources/sap-ui-core.js"
    data-sap-ui-libs="sap.ui.commons, sap.m"></script>
  
 
@@ -31,9 +31,9 @@
 						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 							<ul class="nav">
 								<li><a href="#"><i><img src="images/settings.png" alt="" /></i>Settings</a></li>
-								<li c><a href="#"><i><img src="images/user.png" alt="" /></i>Account</a></li>
-								<li><a href="#"><i><img src="images/mail.png" alt="" /></i>Messages <span class="messages">5</span></a></li>
-								<li class="active"><a href="#"><i><img src="images/favourite.png" alt="" /></i>Favorites</a></li>
+								<li c><a href="http://localhost:3000/profiles?username=deysub"><i><img src="images/user.png" alt="" /></i>Account</a></li>
+								<li><a href="http://localhost:3000/messages?username=deysub"><i><img src="images/mail.png" alt="" /></i>Messages <span class="messages">5</span></a></li>
+								<li class="active"><a href="http://localhost:3000/follow?username=deysub"><i><img src="images/favourite.png" alt="" /></i>Favorites</a></li>
 							<div class="clear"></div>
 						    </ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
@@ -72,7 +72,7 @@
 	    		 	 <h3>Menu Box</h3>
 	    		 	   <div class="menu_box_list">
 				      		<ul>
-						  		<li><a href="#" class="messages"><span>Messages</span><label class="digits">24</label><div class="clear"></div></a></li>
+						  		<li><a href="http://localhost:3000/messages?username=deysub" class="messages"><span>Messages</span><label class="digits">24</label><div class="clear"></div></a></li>
 						  		
 						  		<li class="active"><a href="#" class="invites"><span>Following</span><label class="digits">5</label><div class="clear"></div></a></li>
 						  		<li><a href="#" class="account_settings"><span>Account Settings</span></a></li>
