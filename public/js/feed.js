@@ -20,9 +20,15 @@ var feeding = function(username,userid){
                             xmlhttprequest5.send();
                             var responseJSON3 = JSON.parse(xmlhttprequest5.responseText);
                             var name1 = responseJSON3.success[0].name;
+<<<<<<< HEAD
+                            renderHTML = renderHTML + '    <h3><p>'+name+'</p>';
+                            renderHTML = renderHTML + '    <p>'+name1+'</p>';
+                            renderHTML = renderHTML + '    <p>'+json[count].status+'</p></h3>';
+=======
                             renderHTML = renderHTML + '    <h3>'+name+'</h3>';
                             renderHTML = renderHTML + '    <h3>'+name1+'</h3>';
                             renderHTML = renderHTML + '    <h3>'+json[count].status+'</h3>';
+>>>>>>> 2bb09cfd1a95259bf7a3d6a590fa50b8a2d5aa13
                             renderHTML = renderHTML + '     <div class="menu_box_lists">';
                             renderHTML = renderHTML + '   </div>';
                         }
