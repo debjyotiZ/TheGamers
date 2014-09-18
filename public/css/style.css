@@ -165,6 +165,14 @@ fieldset#body {
 	padding:30px 0;
 	padding-bottom:80px;
 }
+#menu_box_feed{
+width: 100%;
+background: #fff;
+float: left;
+margin: 0 0 .5% 0;
+border-radius: 10px;
+box-shadow: 5px 5px 10px #202020
+}
 .column_left,.column_middle{
 	float:left;
 	width:26%;
@@ -172,6 +180,10 @@ fieldset#body {
 
 .column_middle{
 	margin:0 3%;
+}
+.feed{
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 /*footer*/
 .wrapper {
@@ -195,6 +207,40 @@ background-color: black;
 width: 80%;
 }
 
+/************follow.js**********/
+
+#menu_box_follow{
+	color: #000;
+	font-size: .8Ffollwem;
+	padding:20px 0;
+	text-align: center;
+	background: #FFF;
+	border-radius:5px 5px 0 0;
+	-webkit-border-radius:5px 5px 0 0;
+	-moz-border-radius:5px 5px 0 0;
+	-o-border-radius:5px 5px 0 0;
+}
+/*************message.js***********/
+
+#menu_box_messages{
+	color: #000;
+	font-size: .8Ffollwem;
+	padding:20px 0;
+	text-align: center;
+	background: #FFF;
+	border-radius:5px 5px 0 0;
+	-webkit-border-radius:5px 5px 0 0;
+	-moz-border-radius:5px 5px 0 0;
+	-o-border-radius:5px 5px 0 0;
+}
+
+.box .sapMFlexItem {
+position: relative;
+margin-bottom: 8%;
+-ms-flex-preferred-size: auto;
+-ms-flex-negative: 1;
+}
+
 /******** Colunm Right *************/
 .column_right{
 	float:right;
@@ -202,7 +248,6 @@ width: 80%;
 	margin-bottom: 4px;
 }
 .menu_box_feed h3 {
-    overflow: scroll;
 	color: #000000;
 	font-size: 1.2em;
 	text-transform: uppercase;
@@ -283,13 +328,13 @@ width: 80%;
 .menu_box_list li a.invites:hover,.menu_box_list li.active a{
 	background-image:url(../images/invites-hover.png);
 }
-.menu_box_list li a.events{
-	background-image:url(../images/events.png);
+.menu_box_list li a.following{
+	background-image:url(../images/invites.png);
 	background-repeat:no-repeat;
 	background-position:30px  13px;
 }
-.menu_box_list li a.events:hover{
-	background-image:url(../images/events-hover.png);
+.menu_box_list li a.following:hover{
+	background-image:url(../images/invites-hover.png);
 }
 .menu_box_list li a.account_settings{
 	background-image:url(../images/settings.png);
